@@ -21,7 +21,7 @@ namespace Factorial
 
             try
             {
-                command.CommandText = @"SELECT name,id, FROM users.usernames;";
+                command.CommandText = @"SELECT name FROM users.usernames;";
                 using (connection)
                 {
                     connection.Open();
@@ -30,14 +30,13 @@ namespace Factorial
                     while (reader.Read())
                     {
                         var username = reader.GetString(0);
-                        Console.WriteLine(username);    
-                        //usernames.Add(username);
+                        usernames.Add(username);
                     }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Unable to read data");
+                Console.WriteLine(ex.Message);
                 
             }
             

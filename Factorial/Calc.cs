@@ -9,7 +9,7 @@ namespace std
         {
             DataBaseHandler dbhandler = new DataBaseHandler();
 
-            Console.WriteLine(dbhandler.GetUserNames());
+            Console.WriteLine(dbhandler.GetUserNames().Count+"summary names");
 
             
         }
